@@ -17,7 +17,7 @@ const TaskForm = () => {
 
     try {
        
-      const response = await axios.post('http://localhost:5000/api/todo', formData);
+      const response = await axios.post('https://todoserver-eta.vercel.app/api/todo', formData);
  
       console.log('Response from server:', response.data); 
       setTaskTitle('');

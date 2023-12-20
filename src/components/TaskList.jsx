@@ -10,7 +10,7 @@ const TaskList = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/todo');
+        const response = await axios.get('https://todoserver-eta.vercel.app/api/todo');
         console.log("Here is the data:", response.data);
         setTasks(response.data);
       } catch (error) {
@@ -39,13 +39,13 @@ const TaskList = () => {
       const newDescription = await promptForUpdate('description');
 
       // Send a PUT request to update the task with the new data
-      await axios.put(`http://localhost:5000/api/todo/${taskId}`, {
+      await axios.put(`https://todoserver-eta.vercel.app/api/todo/${taskId}`, {
         title: newTitle,
         description: newDescription,
       });
 
       // Fetch the updated task list after the update
-      const updatedResponse = await axios.get('http://localhost:5000/api/todo');
+      const updatedResponse = await axios.get('https://todoserver-eta.vercel.app/api/todo');
       setTasks(updatedResponse.data);
 
       console.log('Task updated successfully!');
@@ -59,7 +59,7 @@ const TaskList = () => {
   const handleDelete = async (taskId) => {
     try {
       // Implement the logic to delete the task
-      await axios.delete(`http://localhost:5000/api/todo/${taskId}`);
+      await axios.delete(`https://todoserver-eta.vercel.app/api/todo/${taskId}`);
 
       // Update the local state to remove the deleted task
       setTasks((prevTasks) => prevTasks.filter((task) => task._id !== taskId));
