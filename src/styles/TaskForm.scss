@@ -1,0 +1,39 @@
+// components/TaskForm.scss
+
+.maintaskform {
+  display: flex;
+  margin-bottom: 20px;
+
+  input,
+  textarea {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-right: 10px;
+
+    &:focus {
+      outline: none;
+      border-color: #3498db;
+    }
+  }
+
+  textarea {
+    resize: vertical; // Allow vertical resizing of the textarea
+  }
+
+  button {
+    background-color: #2ecc71;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+
+    &:hover {
+      background-color: #27ae60;
+    }
+  }
+}
